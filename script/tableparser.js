@@ -2,7 +2,7 @@ function buildTable(tableName) {
 
     const container = document.getElementById("link_container");
 
-    fetch("./ressource/page/" + tableName + ".json")
+    fetch("Navigator/ressource/page/" + tableName + ".json")
         .then((response) => response.json())
         .then((data) => {
             const newChildren = [];
