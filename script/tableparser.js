@@ -8,6 +8,11 @@ function buildTable(tableName) {
             const newChildren = [];
             data[tableName].forEach((value, index) => {
                 newChildren[index] = document.createElement('div');
+                //creating the icon
+                let icon = document.createElement('img');
+                icon.src = value.href.match(/https?:\/\/[^\/]+/)[0] + "/favicon.ico";
+                newChildren[index].appendChild(icon);
+                //creating the link
                 let link = document.createElement('a');
                 link.href = value.href;
                 link.innerText = value.title;
