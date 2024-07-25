@@ -1,4 +1,5 @@
 .menu {
+    --transition : 0.5s ease-in-out;
 
     list-style-type: none;
     padding: 0;
@@ -11,18 +12,20 @@
 
 
     li {
-        float: left;
-        padding: 10px 0;
         background-color: var(--mainnothover);
         width: var(--mainliwidth);
+        padding: 10px 0;
+        float: left;
+        transition: background-color var(--transition) , color var(--transition);
     }
 
     li a {
+        color: var(--font);
+        width: 100%;
+        padding: 10px 0;
         display: inline-block;
         text-align: center;
-        padding: 10px 0;
         text-decoration: none;
-        color: var(--font);
     }
 
     li:hover {
