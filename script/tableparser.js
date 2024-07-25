@@ -7,16 +7,19 @@ function buildTable(tableName) {
         .then((data) => {
             const newChildren = [];
             data[tableName].forEach((value, index) => {
-                newChildren[index] = document.createElement('div');
+                newChildren[index] = document.createElement('a');
+                newChildren[index].href = value.href;
+                //creating the div
+                let divElement = document.createElement('div');
+                newChildren[index].appendChild(divElement);
                 //creating the icon
                 let icon = document.createElement('img');
                 icon.src = value.href.match(/https?:\/\/[^\/]+/)[0] + "/favicon.ico";
-                newChildren[index].appendChild(icon);
-                //creating the link
-                let link = document.createElement('a');
-                link.href = value.href;
-                link.innerText = value.title;
-                newChildren[index].appendChild(link);
+                divElement.appendChild(icon);
+                //creating p
+                let p = document.createElement('p');
+                p.innerText = value.title;
+                divElement.appendChild(p);
             });
             return newChildren;
         })
