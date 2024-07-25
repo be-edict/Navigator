@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Navigator</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            $("#includeHtml").load("html/mainmenu.html");
+        })
+    </script>
 </head>
 <body>
+    <header>
+        <h1>Navigator</h1>
+    </header>
+    <nav>
+        <div id="includeHtml"></div>
+    </nav>
+
+    <div id="link_container">
+        <div style="background-color: aqua; margin: 10px; width: 100%; padding: 10px">a</div>
+        <div style="background-color: aqua; margin: 10px; width: 100%; padding: 10px">b</div>
+    </div>
 
 </body>
 </html>
