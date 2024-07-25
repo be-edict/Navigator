@@ -1,35 +1,39 @@
 .menu {
+    --transition : 0.5s ease-in-out;
 
     list-style-type: none;
     padding: 0;
     margin: 0;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
 
-    background-color: var(--mainmenu);
-    box-shadow: var(--shadow) 5px 5px;
+    background-image: var(--mainbackground-image);
+    box-shadow: var(--shadow);
 
 
     li {
+        background-color: var(--mainnothover);
+        width: var(--mainliwidth);
+        padding: 10px 0;
         float: left;
-        padding: 10px;
+        transition: background-color var(--transition) , color var(--transition);
     }
 
     li a {
+        color: var(--font);
+        width: 100%;
+        padding: 10px 0;
         display: inline-block;
         text-align: center;
-        padding: 10px;
         text-decoration: none;
-        min-width: 100px;
-        color: var(--font);
     }
 
     li:hover {
-        background-color: var(--mainmenuhover);
-        color: var(--mainmenu);
+        background-color: transparent;
+        color: var(--mainfont);
     }
 
     li a:hover, li:hover a {
-        color: var(--mainmenu);
+        color: var(--mainfont);
     }
 }
