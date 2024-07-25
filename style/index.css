@@ -1,0 +1,13 @@
+#link_container {
+    border-radius: var(--borderradius);
+    background-color: gray;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+#link_container > div {
+    background-color: white;
+    border-radius: var(--borderradius);
+    margin: 10px 0;
+    padding: 10px
+}

@@ -2,13 +2,17 @@
     /*colors*/
 
     --mainfont : #1b1b1b;
-    --mainnothover : #808080;
+    --mainnothover : #484849;
     --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, lightgoldenrodyellow, lightgreen, lightblue, mediumpurple);
     --font : #d3d3d3;
-    --shadow : #606060;
+    --shadow : rgba(72, 72, 73, 0.83) 5px 5px;
 
     /*dimensions*/
-    --mainliwidth : 25%
+    --mainliwidth : 25%;
+
+    /*other*/
+    --borderradius : 5px;
+    --defaultmargin : 10px;
 }
 
 body {

@@ -5,10 +5,10 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
 
     background-image: var(--mainbackground-image);
-    box-shadow: var(--shadow) 5px 5px;
+    box-shadow: var(--shadow);
 
 
     li {
