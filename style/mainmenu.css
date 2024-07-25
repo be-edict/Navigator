@@ -6,30 +6,31 @@
     overflow: hidden;
     border-radius: 5px;
 
-    background-color: var(--mainmenu);
+    background-image: var(--mainbackground-image);
     box-shadow: var(--shadow) 5px 5px;
 
 
     li {
         float: left;
-        padding: 10px;
+        padding: 10px 0;
+        background-color: var(--mainnothover);
+        width: var(--mainliwidth);
     }
 
     li a {
         display: inline-block;
         text-align: center;
-        padding: 10px;
+        padding: 10px 0;
         text-decoration: none;
-        min-width: 100px;
         color: var(--font);
     }
 
     li:hover {
-        background-color: var(--mainmenuhover);
-        color: var(--mainmenu);
+        background-color: transparent;
+        color: var(--mainfont);
     }
 
     li a:hover, li:hover a {
-        color: var(--mainmenu);
+        color: var(--mainfont);
     }
 }

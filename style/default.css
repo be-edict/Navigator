@@ -1,6 +1,16 @@
 :root {
-    --mainmenu : red;
-    --mainmenuhover : blue;
-    --font : green;
-    --shadow : black;
+    /*colors*/
+
+    --mainfont : #1b1b1b;
+    --mainnothover : #595959;
+    --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, lightgoldenrodyellow, lightgreen, lightblue, mediumpurple);
+    --font : #d3d3d3;
+    --shadow : #222222;
+
+    /*dimensions*/
+    --mainliwidth : 25%
+}
+
+body {
+    font-family: "Droid Sans Mono", monospace;
 }
