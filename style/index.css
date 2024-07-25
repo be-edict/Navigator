@@ -5,7 +5,11 @@
     padding: 10px;
 }
 
-#link_container > a > div, #link_container > div {
+#link_container > a {
+    text-decoration: none;
+}
+
+#link_container > a > div {
     background-color: white;
     border-radius: var(--borderradius);
     margin: 10px 0;
@@ -14,11 +18,21 @@
     display: flex;
 }
 
-#link_container > a > div:hover, #link_container > div:hover {
+#link_container > a > div:hover {
     background-color: var(--mainnothover);
     color: var(--font);
 }
 
-#link_container > img {
+#link_container > a > div > img {
     border-radius: var(--borderradius);
+    width: 5%;
+    height: 5%;
 }
+
+#link_container > a > div > p {
+    width: 100%;
+    color: var(--font);
+    text-align: center;
+    margin: auto;
+}
+
