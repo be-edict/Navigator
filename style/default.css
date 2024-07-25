@@ -1,11 +1,10 @@
 :root {
     /*colors*/
-
     --mainfont : #1b1b1b;
     --mainnothover : #484849;
     --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, lightgoldenrodyellow, lightgreen, lightblue, mediumpurple);
     --font : #d3d3d3;
-    --shadowcolor :  rgba(72, 72, 73, 0.83);
+    --shadowcolor : rgba(92, 92, 92, 0.35);
 
     /*dimensions*/
     --mainliwidth : 25%;
@@ -14,8 +13,11 @@
     --borderradius : 5px;
     --defaultmargin : 10px;
     --shadow : var(--shadowcolor) 5px 5px;
+    --bodybackground : lightpink;
+    --transition : 0.4s ease-in-out;
 }
 
 body {
     font-family: "Droid Sans Mono", monospace;
+    background: var(--bodybackground);
 }
