@@ -10,7 +10,7 @@ function buildTable(tableName) {
                 newChildren[index] = document.createElement('div');
                 let link = document.createElement('a');
                 link.href = value.href;
-                link.title = value.title;
+                link.innerText = value.title;
                 newChildren[index].appendChild(link);
             });
             return newChildren;
