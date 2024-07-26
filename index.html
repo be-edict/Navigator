@@ -10,13 +10,14 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="./script/readAllFilenames.js"></script>
     <script src="./script/createDynMenu.js"></script>
+
     <script>
         $(function () {
-            $("#includeMainMenu").load("./html/mainmenu.html");
-        })
+            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
+        });
         $(function () {
             $("#includeFooter").load("./html/footer.html");
-        })
+        });
     </script>
 
 </head>
@@ -40,10 +41,6 @@
    <footer>
       <div id="includeFooter"></div>
    </footer>
-  
- <script>
-    readAllFilenames().then((objs) => buildMenu(objs));
-</script>
 
 </body>
 </html>
