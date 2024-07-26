@@ -1,6 +1,5 @@
 .menu {
 
-
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -10,9 +9,8 @@
     background-image: var(--mainbackground-image);
     box-shadow: var(--shadow);
 
-
     li {
-        background-color: var(--mainnothover);
+        background-color: var(--maincolor);
         width: var(--mainliwidth);
         padding: 10px 0;
         float: left;
@@ -20,7 +18,7 @@
     }
 
     li a {
-        color: var(--font);
+        color: var(--lightfontcolor);
         width: 100%;
         padding: 10px 0;
         display: inline-block;
@@ -30,10 +28,10 @@
 
     li:hover {
         background-color: transparent;
-        color: var(--mainfont);
+        color: var(--fontcolor);
     }
 
     li a:hover, li:hover a {
-        color: var(--mainfont);
+        color: var(--fontcolor);
     }
 }
