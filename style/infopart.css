@@ -2,8 +2,10 @@
     background-color: var(--shadowcolor);
     border-radius: var(--borderradius);
     padding: 1%;
+    width: fit-content;
+    float: right;
 }
 
 #clock {
-
+    text-align: right;
 }
