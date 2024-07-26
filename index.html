@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./style/index.css"/>
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="./script/tableparser.js"></script>
+    <script src="./script/readAllFilenames.js"></script>
+    <script src="./script/createDynMenu.js"></script>
     <script>
         $(function () {
             $("#includeMainMenu").load("./html/mainmenu.html");
@@ -19,6 +20,7 @@
     </script>
 
 </head>
+
 <body>
     <div style="margin: 10px">
         <header>
@@ -28,14 +30,20 @@
             <div id="includeMainMenu"></div>
         </nav>
 
-        <div id="link_container">
-            <a>
-                <div>test</div>
-            </a>
-        </div>
-    </div>
-    <footer>
-        <div id="includeFooter"></div>
-    </footer>
+      <div id="link_container">
+        <a>
+          <div>test</div>
+        </a>
+      </div>
+   </div>
+  
+   <footer>
+      <div id="includeFooter"></div>
+   </footer>
+  
+ <script>
+    readAllFilenames().then((objs) => buildMenu(objs));
+</script>
+
 </body>
 </html>
