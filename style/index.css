@@ -42,3 +42,8 @@
     color: var(--font);
 }
 
+h1 {
+    color: var(--mainnothover);
+    text-align: center;
+    margin: 4%;
+}

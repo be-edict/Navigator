@@ -1,6 +1,5 @@
 .menu {
 
-
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -9,7 +8,6 @@
 
     background-image: var(--mainbackground-image);
     box-shadow: var(--shadow);
-
 
     li {
         background-color: var(--mainnothover);
