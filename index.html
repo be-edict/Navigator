@@ -13,7 +13,7 @@
 
     <script>
         $(function () {
-            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs)));
+            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
         });
         $(function () {
             $("#includeFooter").load("./html/footer.html");

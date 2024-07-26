@@ -19,6 +19,7 @@ async function buildMenu(objs) {
         menuItems.push(li);
     }
     menu.replaceChildren(...menuItems);
+    return menuItems;
 }
 
 function buildTable(tableName) {
