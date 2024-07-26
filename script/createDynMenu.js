@@ -39,6 +39,10 @@ function buildTable(tableName) {
                 //creating the icon
                 let icon = document.createElement('img');
                 icon.src = value.href.match(/https?:\/\/[^\/]+/)[0] + "/favicon.ico";
+                icon.onerror = () => {
+                  icon.onerror = null;
+                  icon.src = "./ressource/media/fallback.png";
+                };
                 divElement.appendChild(icon);
                 //creating p
                 let p = document.createElement('p');
