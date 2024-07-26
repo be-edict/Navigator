@@ -1,3 +1,9 @@
 #info_container {
+    background-color: var(--shadowcolor);
+    border-radius: var(--borderradius);
+    padding: 1%;
+}
+
+#clock {
 
 }
