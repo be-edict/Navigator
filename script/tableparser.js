@@ -2,11 +2,11 @@ function buildTable(tableName) {
 
     const container = document.getElementById("link_container");
 
-    fetch("./ressource/page/" + tableName + ".json")
+    fetch("./ressource/page/" + tableName)
         .then((response) => response.json())
         .then((data) => {
             const newChildren = [];
-            data[tableName].forEach((value, index) => {
+            data[tableName.match(/[^\.]*/)[0]].forEach((value, index) => {
                 newChildren[index] = document.createElement('a');
                 newChildren[index].href = value.href;
                 //creating the div
