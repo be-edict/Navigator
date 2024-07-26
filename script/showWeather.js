@@ -23,7 +23,7 @@ function callApi() {
     navigator.geolocation.clearWatch(watch);
 
     console.log(latitude, longitude);
-    let URL = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude +"&hourly=temperature_2m,weather_code&timezone=Europe%2FBerlin&forecast_days=1&models=icon_seamless"
+    let URL = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude +"&current=temperature_2m,is_day,weather_code&timezone=Europe%2FBerlin&forecast_days=1&models=icon_seamless";
 
     fetch(URL)
         .then(response => {
@@ -33,10 +33,16 @@ function callApi() {
             return response.json();
         })
         .then(data =>{
-            console.log(data);
+            showData(data.current.is_day, data.current.temperature_2m, data.current.weather_code);
         })
         .catch(error => {
             console.log("Error:", error);
         });
+}
 
+function showData(isday, temperature, weather_code) {
+    if(isday){
+
+    }
+    weatherDiv.innerHTML = isday + " " + temperature + " " + weather_code;
 }
