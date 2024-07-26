@@ -11,25 +11,31 @@
     <script src="./script/tableparser.js"></script>
     <script>
         $(function () {
-            $("#includeHtml").load("./html/mainmenu.html");
+            $("#includeMainMenu").load("./html/mainmenu.html");
+        })
+        $(function () {
+            $("#includeFooter").load("./html/footer.html");
         })
     </script>
 
 </head>
 <body>
+    <div style="margin: 10px">
+        <header>
+            <h1>Navigator</h1>
+        </header>
+        <nav>
+            <div id="includeMainMenu"></div>
+        </nav>
 
-    <header>
-        <h1>Navigator</h1>
-    </header>
-    <nav>
-        <div id="includeHtml"></div>
-    </nav>
-
-    <div id="link_container">
-        <a>
-            <div>test</div>
-        </a>
+        <div id="link_container">
+            <a>
+                <div>test</div>
+            </a>
+        </div>
     </div>
-
+    <footer>
+        <div id="includeFooter"></div>
+    </footer>
 </body>
 </html>
