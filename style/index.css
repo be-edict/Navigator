@@ -20,8 +20,8 @@
 }
 
 #link_container > a > div:hover {
-    background-color: var(--mainnothover);
-    color: var(--font);
+    background-color: var(--maincolor);
+    color: var(--lightfontcolor);
 }
 
 #link_container > a > div > img {
@@ -33,17 +33,17 @@
 
 #link_container > a > div > p {
     width: 100%;
-    color: var(--mainnothover);
+    color: var(--maincolor);
     text-align: center;
     margin: auto;
 }
 
 #link_container > a > div:hover > p {
-    color: var(--font);
+    color: var(--lightfontcolor);
 }
 
 h1 {
-    color: var(--mainnothover);
+    color: var(--maincolor);
     text-align: center;
     margin: 4%;
 }
