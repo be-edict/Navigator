@@ -13,20 +13,23 @@
 
     <script>
         $(function () {
-            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
-        });
-        $(function () {
+            $("#includeMainMenu").load("./html/mainmenu.html");
             $("#includeFooter").load("./html/footer.html");
-        });
+            $("#includeInfopart").load("./html/infopart.html");
+        })
     </script>
 
 </head>
 
 <body>
-    <div style="margin: 10px">
-        <header>
-            <h1>Navigator</h1>
-        </header>
+    <div style="margin: 1%">
+        <div style="display: flex; margin-bottom: 5%">
+            <header style="width: 50%">
+                <h1>Navigator</h1>
+            </header>
+            <div id="includeInfopart" style="width: 50%"></div>
+        </div>
+
         <nav>
             <div id="includeMainMenu"></div>
         </nav>
@@ -37,7 +40,7 @@
         </a>
       </div>
    </div>
-  
+
    <footer>
       <div id="includeFooter"></div>
    </footer>
