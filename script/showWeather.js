@@ -47,7 +47,11 @@ function getCity(latitude, longitude) {
 
                 if(dataKey !== undefined && dataKey !== "") {
                     locationname = data.address[dataKey];
+                    if(locationname.length >= 15) {
+                        locationname = locationname.substr(0, 15) + "...";
+                    }
                     console.log(locationname);
+                    break;
                 }
             }
             callWeatherApi();
