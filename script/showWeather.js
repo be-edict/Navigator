@@ -1,33 +1,41 @@
 const weatherDiv = document.getElementById('weather');
 
-//status anzeigen
+//show status
 weatherDiv.innerHTML = "Position wird ermittelt...";
 
-//#region getting location
 let latitude;
 let longitude;
+let locationname = "loading...";
+
 getGeolocation();
 
-let locationname;
+//show status
+weatherDiv.innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
 
+//api calls
+let watch = navigator.geolocation.watchPosition(callWeatherApi);
+let watch2 = navigator.geolocation.watchPosition(callLocationApi);
+
+
+//#region getting location
 function getGeolocation(weatherDiv) {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getPosition);
+        navigator.geolocation.getCurrentPosition((position) => {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log(latitude, longitude);
+        });
     } else {
         weatherDiv.innerHTML = "Geolocation is not supported";
     }
 }
+//#endregion
 
-function getPosition(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
+//#region apicalls
 
-    getCity(latitude, longitude);
-}
-
-function getCity(latitude, longitude) {
-    const url = 'https://nominatim.openstreetmap.org/reverse?lat='+ latitude +'&lon='+ longitude +'&format=jsonv2';
+function callApi(url, dataFunction) {
     console.log(url);
+
     fetch(url)
         .then((response) =>{
             if(!response.ok) {
@@ -36,62 +44,49 @@ function getCity(latitude, longitude) {
             return response.json();
         })
         .then((data) => {
-            data.address["ISO3166-2-lvl4"] = undefined;
-
-            for (const dataKey in data.address) {
-                if( data.address[dataKey] === data.address.house_number ||
-                    data.address[dataKey] === data.address.road ||
-                    data.address[dataKey] === data.address.ISO3166-2||
-                    data.address[dataKey] === data.address.postcode ||
-                    data.address[dataKey] === data.address.country_code) { continue; }
-
-                if(dataKey !== undefined && dataKey !== "") {
-                    locationname = data.address[dataKey];
-                    if(locationname.length >= 15) {
-                        locationname = locationname.substr(0, 15) + "...";
-                    }
-                    console.log(locationname);
-                    break;
-                }
-            }
-            callWeatherApi();
-        });
-}
-//#endregion
-
-//status anzeigen
-weatherDiv.innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
-
-//api aufruf
-let watch = navigator.geolocation.watchPosition(callWeatherApi);
-
-//#region getting WeatherData
-function callWeatherApi() {
-    navigator.geolocation.clearWatch(watch);
-
-    console.log(latitude, longitude);
-    let URL = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude +"&current=temperature_2m,is_day,weather_code&timezone=Europe%2FBerlin&forecast_days=1&models=icon_seamless";
-
-    console.log(URL);
-    fetch(URL)
-        .then(response => {
-            if(!response.ok) {
-                throw new Error("No network response");
-            }
-            return response.json();
-        })
-        .then(data =>{
-            showData(data.current.is_day, data.current.temperature_2m, data.current.weather_code);
+            dataFunction(data);
         })
         .catch(error => {
             console.log("Error:", error);
         });
 }
+
+function callLocationApi() {
+
+    const url = 'https://nominatim.openstreetmap.org/reverse?lat='+ latitude +'&lon='+ longitude +'&format=jsonv2';
+
+    callApi(url, (data) => {
+        data.address["ISO3166-2-lvl4"] = undefined;
+
+        for (const dataKey in data.address) {
+            if( data.address[dataKey] === data.address.house_number || data.address[dataKey] === data.address.road ||
+                data.address[dataKey] === data.address.postcode || data.address[dataKey] === data.address.country_code) { continue; }
+
+            if(dataKey !== undefined && dataKey !== "") {
+                locationname = data.address[dataKey];
+                if(locationname.length >= 15) {
+                    locationname = locationname.substr(0, 15) + "...";
+                }
+                console.log(locationname);
+                break;
+            }
+        }
+    });
+}
+
+function callWeatherApi() {
+
+    let url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&current=temperature_2m,is_day,weather_code&timezone=Europe%2FBerlin&forecast_days=1&models=icon_seamless";
+
+    callApi(url, (data) => {
+        showData(data.current.is_day, data.current.temperature_2m, data.current.weather_code);
+    })
+}
 //#endregion
 
 //#region showing Data
 function showData(isday, temperature, weather_code) {
-    isday = true;
+
     if(isday){
         weatherDiv.style.background = getComputedStyle(document.body).getPropertyValue("--day");
         weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--maincolor");
