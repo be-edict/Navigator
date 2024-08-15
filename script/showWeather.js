@@ -1,20 +1,16 @@
 const weatherDiv = document.getElementById('weather');
 
 //status anzeigen
-weatherDiv.innerHTML = "<h2>Position wird ermittelt...</h2>";
+weatherDiv.innerHTML = "Position wird ermittelt...";
 
-//location
+//#region getting location
 let latitude;
 let longitude;
 getGeolocation();
 
-//status anzeigen
-weatherDiv.innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
+let locationname;
 
-//api aufruf
-let watch = navigator.geolocation.watchPosition(callApi);
-
-function getGeolocation() {
+function getGeolocation(weatherDiv) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition);
     } else {
@@ -25,14 +21,54 @@ function getGeolocation() {
 function getPosition(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
+
+    getCity(latitude, longitude);
 }
 
-function callApi() {
+function getCity(latitude, longitude) {
+    const url = 'https://nominatim.openstreetmap.org/reverse?lat='+ latitude +'&lon='+ longitude +'&format=jsonv2';
+    console.log(url);
+    fetch(url)
+        .then((response) =>{
+            if(!response.ok) {
+                throw new Error("No network response");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            data.address["ISO3166-2-lvl4"] = undefined;
+
+            for (const dataKey in data.address) {
+                if( data.address[dataKey] === data.address.house_number ||
+                    data.address[dataKey] === data.address.road ||
+                    data.address[dataKey] === data.address.ISO3166-2||
+                    data.address[dataKey] === data.address.postcode ||
+                    data.address[dataKey] === data.address.country_code) { continue; }
+
+                if(dataKey !== undefined && dataKey !== "") {
+                    locationname = data.address[dataKey];
+                    console.log(locationname);
+                }
+            }
+            callWeatherApi();
+        });
+}
+//#endregion
+
+//status anzeigen
+weatherDiv.innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
+
+//api aufruf
+let watch = navigator.geolocation.watchPosition(callWeatherApi);
+
+//#region getting WeatherData
+function callWeatherApi() {
     navigator.geolocation.clearWatch(watch);
 
     console.log(latitude, longitude);
     let URL = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude +"&current=temperature_2m,is_day,weather_code&timezone=Europe%2FBerlin&forecast_days=1&models=icon_seamless";
 
+    console.log(URL);
     fetch(URL)
         .then(response => {
             if(!response.ok) {
@@ -47,7 +83,9 @@ function callApi() {
             console.log("Error:", error);
         });
 }
+//#endregion
 
+//#region showing Data
 function showData(isday, temperature, weather_code) {
     isday = true;
     if(isday){
@@ -58,7 +96,7 @@ function showData(isday, temperature, weather_code) {
         weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--lightfontcolor");
     }
 
-    weatherDiv.innerHTML = "<div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
+    weatherDiv.innerHTML = "<div>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
 }
 
 function getWeatherIcon(weather_code, isday) {
@@ -98,3 +136,4 @@ function getWeatherIcon(weather_code, isday) {
         default: "error";
     }
 }
+//#endregion
