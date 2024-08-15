@@ -49,18 +49,19 @@ function callApi() {
 }
 
 function showData(isday, temperature, weather_code) {
+    isday = true;
     if(isday){
         weatherDiv.style.background = getComputedStyle(document.body).getPropertyValue("--day");
+        weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--maincolor");
     } else {
         weatherDiv.style.background = getComputedStyle(document.body).getPropertyValue("--night");
+        weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--lightfontcolor");
     }
 
     weatherDiv.innerHTML = "<div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
 }
 
 function getWeatherIcon(weather_code, isday) {
-    weather_code = 99;
-    isday = true;
     switch (weather_code) {
         case 0: case 1: /*clear sky & mainly clear*/
             if(isday) {

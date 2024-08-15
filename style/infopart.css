@@ -1,6 +1,6 @@
 :root {
-    --day : rgba(135, 183, 255, 1);
-    --night : rgba(24, 50, 104, 1);
+    --day :  linear-gradient(to right, white, rgba(135, 183, 255, 1) 90%);
+    --night : linear-gradient(to right, var(--maincolor), rgba(24, 50, 104, 1) 90%);
 }
 
 #info_container {
@@ -26,6 +26,7 @@
 }
 
 #weather{
+    box-shadow: var(--shadow);
     border-radius: var(--borderradius);
 }
 
