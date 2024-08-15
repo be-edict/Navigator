@@ -1,3 +1,5 @@
+document.getElementById('time').innerHTML = "Zeit wird ermittelt...";
+
 setInterval(clock, 1000);
 
 
@@ -10,5 +12,5 @@ setInterval(clock, 1000);
         const time = Intl.DateTimeFormat('de', {hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(now)
 
         document.getElementById('date').innerHTML = date;
-        document.getElementById('time').innerHTML = time;
+        document.getElementById('time').innerHTML = "<i class='material-symbols-outlined'>schedule</i><p>" + time + "</p>";
     }
