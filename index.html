@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 
     <meta charset="UTF-8">
@@ -13,10 +13,10 @@
 
     <script>
         $(function () {
-            $("#includeMainMenu").load("./html/mainmenu.html");
-            $("#includeFooter").load("./html/footer.html");
             $("#includeInfopart").load("./html/infopart.html");
-        })
+            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
+            $("#includeFooter").load("./html/footer.html");
+        });
     </script>
 
 </head>
