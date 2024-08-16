@@ -14,8 +14,8 @@
     <script>
         $(function () {
             $("#includeInfopart").load("./html/infopart.html");
-            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
             $("#includeFooter").load("./html/footer.html");
+            $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
         });
     </script>
 

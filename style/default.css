@@ -22,6 +22,8 @@
 body {
     font-family: "Droid Sans Mono", monospace;
     background-image: url(../ressource/media/background/backg3.gif);
-    background-size: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
 }
