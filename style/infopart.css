@@ -26,7 +26,7 @@
 }
 
 #weather{
-    box-shadow: var(--shadow);
+
     border-radius: var(--borderradius);
 }
 
