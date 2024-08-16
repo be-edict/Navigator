@@ -23,11 +23,11 @@
 body {
     font-family: "Droid Sans Mono", monospace;
 
-    @media screen and (min-width: 415px) {
+    @media screen and (min-width: 1081px) {
         background-image: url(../ressource/media/background/backg3.gif);
     }
 
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 1080px) {
         background-image: url(../ressource/media/background/snow.gif);
     }
 
