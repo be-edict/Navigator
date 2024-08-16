@@ -1,9 +1,11 @@
 async function buildMenu(objs) {
     const menu = document.getElementById("menu");
     const menuItems = [];
+    document.querySelector(':root').style.setProperty('--mainliwidth', 100/objs.length+"%");
     for (let item of objs) {
         let key = "";
         let li = document.createElement("li");
+        //li.style.width = 100/objs.length+"%";
         li.onclick = (e) => {
             e.stopPropagation();
             buildTable(e.currentTarget.firstElementChild.textContent+".json");
