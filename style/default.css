@@ -5,16 +5,14 @@
     --maincolorrgba: rgba(72, 72, 72, 0.75);
     --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, gold, lightgreen, lightblue, mediumpurple);
     --lightfontcolor: #d3d3d3;
-    --shadowcolor: rgba(92, 92, 92, 0.35);
 
 
     /*dimensions*/
     --mainliwidth: 25%;
 
     /*other*/
-    --borderradius: 5px;
-    --defaultmargin: 10px;
-    --shadow: var(--shadowcolor) 5px 5px;
+    --borderradius: 1vb;
+    --defaultmargin: 10vb;
     --transition: 0.4s ease-in-out;
 }
 
@@ -33,5 +31,5 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
-    font-size: 2.5vh;
+    font-size: 2vb;
 }

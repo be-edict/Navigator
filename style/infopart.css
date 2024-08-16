@@ -9,6 +9,7 @@
     padding: 1%;
     width: fit-content;
     color: var(--lightfontcolor);
+    font-size: 0.5em;
 }
 
 #info_container > div {
