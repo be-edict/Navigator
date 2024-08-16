@@ -1,21 +1,21 @@
 #link_container {
     border-radius: var(--borderradius);
     background-color: rgba(211,211,211,0.25);
-    padding: 5px 0;
-    width: 50%;
-    margin: 20px auto;
+    padding: 0.5vw 0;
+    width: 70vw;
+    margin: 2vh auto;
 }
 
 #link_container > a {
     text-decoration: none;
-    margin: 10px;
+    margin: 2vh 2vb;
 }
 
 #link_container > a > div {
     background-color: var(--maincolor);
     border-radius: var(--borderradius);
-    padding: 10px;
-    margin: 15px;
+    padding: 1.5vb;
+    margin: 2vh 0;
     display: flex;
     transition: background-color var(--transition) , color var(--transition);
 }
@@ -28,8 +28,8 @@
 #link_container > a > div > img {
     border-radius: var(--borderradius);
     image-rendering: high-quality;
-    width: 5%;
-    height: 5%;
+    width: 4vh;
+    height: 4vh;
 }
 
 #link_container > a > div > p {
@@ -46,6 +46,6 @@
 h1 {
     color: var(--lightfontcolor);
     text-align: center;
-    font-size: 400%;
-    margin: 4% auto;
+    font-size: 2.5vmax;
+    margin: 4vh auto;
 }

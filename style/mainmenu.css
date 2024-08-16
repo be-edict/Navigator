@@ -1,8 +1,8 @@
 .menu {
     list-style-type: none;
     padding: 0;
-    width: 50%;
-    margin: 20px auto;
+    width: 70vw;
+    margin: 0.5vb auto;
     overflow: hidden;
     border-radius: var(--borderradius);
 
@@ -11,16 +11,18 @@
     li {
         background-color: var(--maincolor);
         width: var(--mainliwidth);
-        padding: 10px 0;
+        padding: 1.5vh 0;
         float: left;
         transition: background-color var(--transition) , color var(--transition);
     }
 
     li a {
         color: var(--lightfontcolor);
+        margin: auto 0;
         width: 100%;
-        padding: 10px 0;
+        padding: 0.25vb 0;
         display: inline-block;
+        align-self: center;
         text-align: center;
         text-decoration: none;
     }
