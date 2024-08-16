@@ -7,7 +7,6 @@
     border-radius: var(--borderradius);
 
     background-image: var(--mainbackground-image);
-    box-shadow: var(--shadow);
 
     li {
         background-color: var(--maincolor);

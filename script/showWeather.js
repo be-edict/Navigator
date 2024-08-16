@@ -95,7 +95,6 @@ function showData(isday, temperature, weather_code) {
         weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--lightfontcolor");
     }
 
-    weatherDiv.style.boxShadow = getComputedStyle(document.body).getPropertyValue("--shadow");
     weatherDiv.innerHTML = "<div style='text-wrap: nowrap'>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
 }
 

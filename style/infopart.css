@@ -9,6 +9,7 @@
     padding: 1%;
     width: fit-content;
     float: right;
+    color: var(--lightfontcolor);
 }
 
 #info_container > div {
@@ -16,17 +17,17 @@
 }
 
 #clock {
-    text-align: right;
+    text-align: center;
 }
 
 #weather, #time {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #weather{
-
     border-radius: var(--borderradius);
 }
 

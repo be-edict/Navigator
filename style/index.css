@@ -1,7 +1,7 @@
 #link_container {
     border-radius: var(--borderradius);
     background-color: rgba(211,211,211,0.25);
-    padding: 10px 15px;
+    padding: 0;
     width: 50%;
     margin: 20px auto;
 }
@@ -15,7 +15,7 @@
     background-color: var(--maincolorrgba);
     border-radius: var(--borderradius);
     padding: 10px;
-    box-shadow: var(--shadow);
+    margin: 0 15px;
     display: flex;
     transition: background-color var(--transition) , color var(--transition);
 }
@@ -44,7 +44,7 @@
 }
 
 h1 {
-    color: var(--maincolor);
+    color: var(--lightfontcolor);
     text-align: center;
     margin: 4%;
 }
