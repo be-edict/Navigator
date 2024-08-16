@@ -16,7 +16,6 @@
     --defaultmargin: 10px;
     --shadow: var(--shadowcolor) 5px 5px;
     --transition: 0.4s ease-in-out;
-
 }
 
 
@@ -34,4 +33,5 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    font-size: 2.5vh;
 }
