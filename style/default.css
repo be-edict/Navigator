@@ -2,7 +2,7 @@
     /*colors*/
     --fontcolor : var(--maincolor);
     --maincolor : #484849;
-    --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, lightgoldenrodyellow, lightgreen, lightblue, mediumpurple);
+    --mainbackground-image: linear-gradient(to right, lightcoral, lightsalmon, gold, lightgreen, lightblue, mediumpurple);
     --lightfontcolor : #d3d3d3;
     --shadowcolor : rgba(92, 92, 92, 0.35);
 
@@ -15,11 +15,12 @@
     --defaultmargin : 10px;
     --shadow : var(--shadowcolor) 5px 5px;
     --transition : 0.4s ease-in-out;
-    --bodybackground : lightpink;
+    --bodybackground: "../resources/images/background/backg3.gif";
 }
 
 body {
     font-family: "Droid Sans Mono", monospace;
-    background: var(--bodybackground);
+    background-image: url(../ressource/media/background/backg3.gif);
+    background-size: auto;
     margin: 0;
 }

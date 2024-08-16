@@ -64,8 +64,8 @@ function callLocationApi() {
 
             if(dataKey !== undefined && dataKey !== "") {
                 locationname = data.address[dataKey];
-                if(locationname.length >= 15) {
-                    locationname = locationname.substr(0, 15) + "...";
+                if(locationname.length >= 20) {
+                    locationname = locationname.substr(0, 20) + "...";
                 }
                 console.log(locationname);
                 break;
@@ -96,7 +96,7 @@ function showData(isday, temperature, weather_code) {
     }
 
     weatherDiv.style.boxShadow = getComputedStyle(document.body).getPropertyValue("--shadow");
-    weatherDiv.innerHTML = "<div>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
+    weatherDiv.innerHTML = "<div style='text-wrap: nowrap'>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
 }
 
 function getWeatherIcon(weather_code, isday) {
