@@ -4,6 +4,7 @@ async function buildMenu(objs) {
     for (let item of objs) {
         let key = "";
         let li = document.createElement("li");
+        li.style.width = 100/objs.length+"%";
         li.onclick = (e) => {
             e.stopPropagation();
             buildTable(e.currentTarget.firstElementChild.textContent+".json");
