@@ -1,8 +1,9 @@
 #link_container {
     border-radius: var(--borderradius);
-    background-color: var(--shadowcolor);
-    margin: 20px 0;
+    background-color: rgba(211,211,211,0.25);
     padding: 10px 15px;
+    width: 50%;
+    margin: 20px auto;
 }
 
 #link_container > a {
@@ -11,7 +12,7 @@
 }
 
 #link_container > a > div {
-    background-color: white;
+    background-color: var(--maincolorrgba);
     border-radius: var(--borderradius);
     padding: 10px;
     box-shadow: var(--shadow);
@@ -33,7 +34,7 @@
 
 #link_container > a > div > p {
     width: 100%;
-    color: var(--maincolor);
+    color: var(--lightfontcolor);
     text-align: center;
     margin: auto;
 }
