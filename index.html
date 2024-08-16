@@ -22,24 +22,26 @@
 </head>
 
 <body>
-    <div style="margin: 1%">
-        <div style="margin-bottom: 1%">
+
+    <div style="display: flex; margin: 1%">
+        <div style="width: 15%"></div>
+        <div style="flex: 1">
             <header>
                 <h1>Navigator</h1>
             </header>
 
+            <nav>
+                <div id="includeMainMenu"></div>
+            </nav>
+
+            <div id="link_container">
+                <a>
+                  <div>test</div>
+                </a>
+            </div>
         </div>
-
-        <div id="includeInfopart" style="position: fixed; top: 1%; right: 1%"></div>
-
-        <nav>
-            <div id="includeMainMenu"></div>
-        </nav>
-
-        <div id="link_container">
-            <a>
-              <div>test</div>
-            </a>
+        <div style="width: 15%">
+            <div id="includeInfopart" style="float: right"></div>
         </div>
    </div>
 
