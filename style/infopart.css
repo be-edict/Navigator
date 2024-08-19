@@ -16,12 +16,17 @@
     @media screen and (max-width: 1080px) and (min-width: 575px) {
         display: flex;
     }
+
+    @media screen and (max-width: 1080px) {
+        margin: 2vb 0;
+        background-color: rgba(211,211,211,0.25);
+    }
 }
 
 .clock {
     text-align: center;
     align-self: center;
-    margin: 1vb auto;
+    margin: 0.5vb auto;
     width: fit-content;
 }
 
@@ -48,9 +53,9 @@
 }
 
 .weatherwrap {
-    margin: 1vb;
+    margin: 0.5vb;
 }
 
 .weather > div, .time > p {
-    margin: 5px;
+    margin: 0.5vb;
 }
