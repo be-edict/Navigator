@@ -54,3 +54,7 @@ h1 {
         font-size: 2.5vmax;
     }
 }
+
+#main{
+    flex: 1;
+}

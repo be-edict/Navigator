@@ -32,7 +32,11 @@ body {
     background-size: cover;
     margin: 0;
     font-size: 2vb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 
 #includeInfopart {
     @media screen and (min-width: 1081px) {

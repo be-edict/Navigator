@@ -5,13 +5,15 @@ a, p {
 }
 
 #footer_container {
-    background-color: var(--maincolorrgba);
     display: flex;
-    width: 100%;
-    height: 7vh;
-    margin-top: 16vh;
 }
 
 #footer_container > div {
     margin: auto;
+}
+
+footer{
+    height: 7vh;
+    background-color: var(--maincolorrgba);
+    margin-top: 4vh;
 }
