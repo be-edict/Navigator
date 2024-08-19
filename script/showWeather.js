@@ -1,7 +1,9 @@
-const weatherDiv = document.getElementById('weather');
+const weatherDiv = document.getElementsByClassName('weather');
 
 //show status
-weatherDiv.innerHTML = "Position wird ermittelt...";
+for (let i = 0; i < weatherDiv.length; i++) {
+    weatherDiv[i].innerHTML = "Position wird ermittelt...";
+}
 
 let latitude;
 let longitude;
@@ -10,7 +12,10 @@ let locationname = "loading...";
 getGeolocation();
 
 //show status
-weatherDiv.innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
+for (let i = 0; i < weatherDiv.length; i++) {
+    weatherDiv[i].innerHTML = weatherDiv.innerHTML = "Wetter wird geladen...";
+}
+
 
 //api calls
 let watch = navigator.geolocation.watchPosition(callWeatherApi);
@@ -88,14 +93,21 @@ function callWeatherApi() {
 function showData(isday, temperature, weather_code) {
 
     if(isday){
-        weatherDiv.style.background = getComputedStyle(document.body).getPropertyValue("--day");
-        weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--maincolor");
+        for (let i = 0; i < weatherDiv.length; i++) {
+            weatherDiv[i].style.background = getComputedStyle(document.body).getPropertyValue("--day");
+            weatherDiv[i].style.color = getComputedStyle(document.body).getPropertyValue("--maincolor");
+        }
+
     } else {
-        weatherDiv.style.background = getComputedStyle(document.body).getPropertyValue("--night");
-        weatherDiv.style.color = getComputedStyle(document.body).getPropertyValue("--lightfontcolor");
+        for (let i = 0; i < weatherDiv.length; i++) {
+            weatherDiv[i].style.background = getComputedStyle(document.body).getPropertyValue("--night");
+            weatherDiv[i].style.color = getComputedStyle(document.body).getPropertyValue("--lightfontcolor");
+        }
     }
 
-    weatherDiv.innerHTML = "<div>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
+    for (let i = 0; i < weatherDiv.length; i++) {
+        weatherDiv[i].innerHTML = "<div>" + locationname + "</div><div>" + temperature + "°C </div> <div><i class='material-symbols-outlined'>" + getWeatherIcon(weather_code, isday) + "</i></div>";
+    }
 }
 
 function getWeatherIcon(weather_code, isday) {
