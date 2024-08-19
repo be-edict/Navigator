@@ -4,12 +4,21 @@
 }
 
 #info_container {
-    background-color: var(--shadowcolor);
-    border-radius: var(--borderradius);
-    padding: 1%;
-    width: fit-content;
-    color: var(--lightfontcolor);
-    font-size: 0.5em;
+
+    @media screen and (min-width: 1081px) {
+        background-color: var(--maincolorrgba);
+        border-radius: var(--borderradius);
+        padding: 1%;
+        width: fit-content;
+        color: var(--lightfontcolor);
+    }
+
+    @media screen and (max-width: 1080px) {
+        background-color: var(--maincolorrgba);
+        border-radius: var(--borderradius);
+        padding: 1%;
+        color: var(--lightfontcolor);
+    }
 }
 
 #info_container > div {

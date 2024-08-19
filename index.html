@@ -16,6 +16,7 @@
     <script>
         $(function () {
             $("#includeInfopart").load("./html/infopart.html");
+            $("#includeInfopartmobile").load("./html/infopart.html");
             $("#includeFooter").load("./html/footer.html");
             $("#includeMainMenu").load("./html/mainmenu.html").then(readAllFilenames().then((objs) => buildMenu(objs).then((menuItems) => buildTable(menuItems[0].firstElementChild.textContent+".json"))));
         });
@@ -40,9 +41,10 @@
                   <div>test</div>
                 </a>
             </div>
+            <div id="includeInfopartmobile"></div>
         </div>
         <div style="width: 20vw">
-            <div id="includeInfopart" style="float: right; display: none"></div>
+            <div id="includeInfopart" style="float: right"></div>
         </div>
    </div>
    <footer>

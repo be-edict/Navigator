@@ -33,3 +33,23 @@ body {
     margin: 0;
     font-size: 2vb;
 }
+
+#includeInfopart {
+    @media screen and (min-width: 1081px) {
+        display: block;
+    }
+
+    @media screen and (max-width: 1080px) {
+        display: none;
+    }
+}
+
+#includeInfopartmobile {
+    @media screen and (min-width: 1081px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 1080px) {
+        display: block;
+    }
+}
