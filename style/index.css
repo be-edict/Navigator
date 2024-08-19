@@ -12,7 +12,7 @@
 }
 
 #link_container > a > div {
-    background-color: var(--maincolor);
+    background-color: var(--maincolorrgba);
     border-radius: var(--borderradius);
     padding: 1.5vb;
     margin: 2vh 0;
@@ -21,8 +21,8 @@
 }
 
 #link_container > a > div:hover {
-    background-color: var(--maincolor);
-    color: var(--lightfontcolor);
+    background-color: var(--lightfontcolor);
+    color: var(--maincolor);
 }
 
 #link_container > a > div > img {
@@ -40,7 +40,7 @@
 }
 
 #link_container > a > div:hover > p {
-    color: var(--lightfontcolor);
+    color: var(--maincolor);
 }
 
 h1 {
