@@ -4,6 +4,7 @@
     width: 70vw;
     margin: 0.5vb auto;
     overflow: hidden;
+    font-weight: bolder;
     border-radius: var(--borderradius);
 
     background-image: var(--mainbackground-image);
