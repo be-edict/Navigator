@@ -4,6 +4,8 @@
     padding: 0.5vw 0;
     width: 70vw;
     margin: 2vh auto;
+    overflow: auto;
+    height: 50vh;
 }
 
 #link_container > a {
